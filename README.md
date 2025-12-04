@@ -107,6 +107,11 @@ docker compose up --force-recreate -d
 ```
 
 ---
+## Documentation for Custom Event Tracking
+
+https://umami.is/docs/track-events
+
+---
 ## Database ERD
 ```mermaid
 erDiagram
