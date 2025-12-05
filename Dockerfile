@@ -8,7 +8,7 @@ RUN npm install -g pnpm
 RUN pnpm install --frozen-lockfile
 
 FROM node:22-alpine AS test
-RUN "TODO add tests here"
+RUN echo "TODO add tests here"
 
 # Rebuild the source code only when needed
 FROM node:22-alpine AS build
