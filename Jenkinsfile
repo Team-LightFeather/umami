@@ -4,5 +4,5 @@ appBuildAndDeployV2([
     dockerImageName: "umami",
     containerPort: "8080",
     healthCheckPath: "/actuator/health",
-    buildSystem: "java"
+    buildSystem: "node"
 ])
