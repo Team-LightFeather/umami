@@ -56,6 +56,13 @@ export function WebsiteMetricsBar({
           formatValue: n =>
             `${+n < 0 ? '-' : ''}${formatShortTime(Math.abs(~~n), ['m', 's'], ' ')}`,
         },
+        {
+          label: formatMessage(labels.exit),
+          value: visits / pageviews * 100,
+          prev: comparison.visits / comparison.pageviews * 100,
+          change: visits / pageviews * 100 - comparison.visits / comparison.pageviews * 100,
+          formatValue: n => Math.round(+n) + '%',
+        },
       ]
     : null;
 
@@ -70,6 +77,7 @@ export function WebsiteMetricsBar({
       <MetricsBar>
         {metrics?.map(({ label, value, prev, change, formatValue, reverseColors }) => {
           return (
+            <>
             <MetricCard
               key={label}
               value={value}
@@ -80,6 +88,7 @@ export function WebsiteMetricsBar({
               reverseColors={reverseColors}
               showChange={!isAllTime}
             />
+            </>
           );
         })}
       </MetricsBar>
